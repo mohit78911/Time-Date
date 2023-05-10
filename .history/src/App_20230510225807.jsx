@@ -13,10 +13,10 @@ export default function App() {
 
   const stopTime = () => {
     if (mode) {
-      setMode(false);
+      setMode(true);
       setInterval(updateTime, 1000);
     } else {
-      setMode(true);
+      setMode(false);
       clearInterval(updateTime);
     }
   };
@@ -30,7 +30,7 @@ export default function App() {
     let date = new Date().toLocaleDateString();
     setDayDate(date);
   };
-  // setInterval(updateTime, 1000);
+  setInterval(updateTime, 1000);
   setInterval(updateDate, 1000);
   return (
     <>
@@ -39,7 +39,7 @@ export default function App() {
       </div>
       <h2>Time : {ctime}</h2>
       <h3>Date : {date}</h3>
-      <button onClick={() => stopTime()}>Stop Time</button>
+      <button onClick={stopTime()}>Stop Time</button>
     </>
   );
 }

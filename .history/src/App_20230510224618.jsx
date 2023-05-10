@@ -9,15 +9,15 @@ export default function App() {
 
   const [ctime, setCtime] = useState(time);
   const [daydate, setDayDate] = useState(date);
-  const [mode, setMode] = useState(false);
+  const [mode, setMode] = useState(true);
 
   const stopTime = () => {
     if (mode) {
-      setMode(false);
-      setInterval(updateTime, 1000);
+      setMode(ture);
+      clearInterval(updateTime);
     } else {
       setMode(true);
-      clearInterval(updateTime);
+      setInterval(updateTime);
     }
   };
 
@@ -30,7 +30,7 @@ export default function App() {
     let date = new Date().toLocaleDateString();
     setDayDate(date);
   };
-  // setInterval(updateTime, 1000);
+  // setInterval(updateTime,1000)
   setInterval(updateDate, 1000);
   return (
     <>

@@ -30,7 +30,7 @@ export default function App() {
     let date = new Date().toLocaleDateString();
     setDayDate(date);
   };
-  // setInterval(updateTime, 1000);
+  setInterval(updateTime, 1000);
   setInterval(updateDate, 1000);
   return (
     <>

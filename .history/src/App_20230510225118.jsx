@@ -12,13 +12,7 @@ export default function App() {
   const [mode, setMode] = useState(false);
 
   const stopTime = () => {
-    if (mode) {
-      setMode(false);
-      setInterval(updateTime, 1000);
-    } else {
-      setMode(true);
-      clearInterval(updateTime);
-    }
+    clearInterval(updateDate)
   };
 
   const updateTime = () => {
@@ -30,7 +24,7 @@ export default function App() {
     let date = new Date().toLocaleDateString();
     setDayDate(date);
   };
-  // setInterval(updateTime, 1000);
+  // setInterval(updateTime,1000)
   setInterval(updateDate, 1000);
   return (
     <>

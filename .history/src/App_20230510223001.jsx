@@ -8,38 +8,29 @@ export default function App() {
   let date = new Date().toLocaleDateString();
 
   const [ctime, setCtime] = useState(time);
-  const [daydate, setDayDate] = useState(date);
-  const [mode, setMode] = useState(false);
+  const [daydate,setDayDate]=useState(date);
+const[mode,setMode]=useState(false)
 
-  const stopTime = () => {
-    if (mode) {
-      setMode(false);
-      setInterval(updateTime, 1000);
-    } else {
-      setMode(true);
-      clearInterval(updateTime);
-    }
-  };
+const stopTime = ()=>{
+  if(mode)
+}
 
   const updateTime = () => {
     let time = new Date().toLocaleTimeString();
     setCtime(time);
   };
 
-  const updateDate = () => {
+  const updateDate = ()=>{
     let date = new Date().toLocaleDateString();
-    setDayDate(date);
-  };
-  // setInterval(updateTime, 1000);
-  setInterval(updateDate, 1000);
+    setDayDate(date)
+  }
+  setInterval(updateTime,1000)
+ setInterval(updateDate,1000)
   return (
     <>
-      <div>
-        <h4>Hello, This is Time Application! </h4>
-      </div>
+      <div><h4>Hello, This is Time Application! </h4></div>
       <h2>Time : {ctime}</h2>
       <h3>Date : {date}</h3>
-      <button onClick={() => stopTime()}>Stop Time</button>
     </>
   );
 }
