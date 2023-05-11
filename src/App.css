@@ -52,3 +52,14 @@ body {
   background: black;
   color: white;
 }
+
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(243, 243, 243), rgb(15, 12, 12));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button {
+margin : 3px;
+}

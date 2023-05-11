@@ -1,45 +1,13 @@
-import React from "react";
-import ".//App.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import React from 'react'
+import Time from './Time'
+import ".//App.css"
+import StopWatch from './StopWatch'
 
 export default function App() {
-  let time = new Date().toLocaleTimeString();
-  let date = new Date().toLocaleDateString();
-
-  const [ctime, setCtime] = useState(time);
-  const [daydate, setDayDate] = useState(date);
-  const [mode, setMode] = useState(false);
-
-  const stopTime = () => {
-    if (mode) {
-      setMode(false);
-      setInterval(updateTime, 1000);
-    } else {
-      setMode(true);
-      clearInterval(updateTime);
-    }
-  };
-
-  const updateTime = () => {
-    let time = new Date().toLocaleTimeString();
-    setCtime(time);
-  };
-
-  const updateDate = () => {
-    let date = new Date().toLocaleDateString();
-    setDayDate(date);
-  };
-  // setInterval(updateTime, 1000);
-  setInterval(updateDate, 1000);
   return (
-    <>
-      <div>
-        <h4>Hello, This is Time Application! </h4>
-      </div>
-      <h2>Time : {ctime}</h2>
-      <h3>Date : {date}</h3>
-      <button onClick={() => stopTime()}>Stop Time</button>
-    </>
-  );
+    <div>
+      <Time />
+      <StopWatch/>
+    </div>
+  )
 }
